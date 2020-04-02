@@ -31,6 +31,29 @@ const Layout: React.FunctionComponent<Props> = ({
         margin-right: auto;
         margin-left: auto;
       }
+      @media (min-width: 576px) {
+        .app {
+          max-width: 540px;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .app {
+          max-width: 720px;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .app {
+          max-width: 960px;
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        .app {
+          max-width: 1140px;
+        }
+      }
     `}</style>
     <style jsx global>{`
       /*!
