@@ -7,7 +7,7 @@ import { encode, decode } from "../utils/Base64"
 
 const initValue = {
   encode: "",
-  decode: ""
+  decode: "",
 }
 
 const IndexPage = () => {
@@ -15,7 +15,7 @@ const IndexPage = () => {
   const [base64, setBase64] = useState(initValue)
 
   const handleClick = () => {
-    setIsEncode(t => !t)
+    setIsEncode((t) => !t)
     setBase64(initValue)
   }
 
@@ -37,6 +37,7 @@ const IndexPage = () => {
         <h3 className="label">Decode</h3>
       </div>
       <Textarea
+        autoFocus
         onChange={handleBase64}
         placeholder={isEncode ? "Encode" : "Decode"}
         value={isEncode ? base64.encode : base64.decode}

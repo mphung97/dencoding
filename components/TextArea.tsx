@@ -12,12 +12,13 @@ const TextArea: React.FunctionComponent<Props> = ({
   onChange,
   value,
   disabled,
-  placeholder
+  placeholder,
+  autoFocus,
 }) => {
   const inputEl = React.useRef<HTMLTextAreaElement>(null)
 
   React.useEffect(() => {
-    if (inputEl && inputEl.current) {
+    if (autoFocus && inputEl && inputEl.current) {
       inputEl.current.focus()
     }
   }, [])
@@ -56,11 +57,7 @@ const TextArea: React.FunctionComponent<Props> = ({
           rows={5}
         />
         {disabled && (
-          <button
-            className="button--clear"
-            onClick={handleCopy}
-            title="copy"
-          >
+          <button className="button--clear" onClick={handleCopy} title="copy">
             <svg
               width="20"
               height="20"
@@ -202,7 +199,7 @@ const TextArea: React.FunctionComponent<Props> = ({
 }
 
 TextArea.defaultProps = {
-  placeholder: "Placeholder..."
+  placeholder: "Placeholder...",
 }
 
 export default TextArea
